@@ -21,12 +21,10 @@ body {
 			<p class="style2">
 			<strong>SELAMAT DATANG, SELAMAT BEKERJA</strong></p>
         <blockquote>
-              <p class="pad">Sistem ini memberikan kemudahan bagi petugas laboratorium komputer untuk memasukkan data barang. Dengan bahasa yang mudah dipahami, sistem ini sangat efektif dan efisien bagi petugas laboratorium komputer tanpa terbatas oleh tempat dan waktu.        </p>
+          <p class="pad">Sistem ini memberikan kemudahan bagi petugas laboratorium komputer untuk memasukkan data barang. Dengan bahasa yang mudah dipahami, sistem ini sangat efektif dan efisien bagi petugas laboratorium komputer tanpa terbatas oleh tempat dan waktu.        </p>
         </blockquote>
-			<p class="pad"><a href="#"></a>
-	  <img src="../image/title4.jpg" alt="" width="238" height="23" class="pad2" /></p>
 		<form id="form1" name="form1" method="post" action="">
-			  <p>INPUT DATA BARANG NON-KOMPUTER </p>
+			<p>INPUT DATA BARANG NON-KOMPUTER </p>
 	      <table width="707" height="89" border="0">
 		        <tr>
 		          <th width="142" scope="row">&nbsp;</th>
