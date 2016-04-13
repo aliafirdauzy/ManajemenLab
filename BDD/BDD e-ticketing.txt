@@ -1,0 +1,49 @@
+SISTEM MANAJEMEN LAB (PSI)
+________________________________________
+e-ticketing (sisi pengguna)
+As	: User
+I need	: Fitur Pengaduan Kerusakan
+So that	: Saya dapat mengajukan keluhan terhadap kerusakan yang terjadi di dalam Laboratorium Computer yang mengganggu pembelajaran, baik hardware, software maupun perlengkapan ruangan seperti kursi, meja dan air conditioner (AC)->disebut product pada sistem
+
+
+________________________________________
+		Scenario 
+________________________________________
+Scenario-1. Syarat pengaduan terpenuhi atau proses pengaduan sukses
+Scenario-2. Pengaduan tidak dapat dilakukan karena tidak tidak sesuai prosedur atau syarat pengaduan tidak terpenuhi
+
+
+----------------------------------------
+		Normal Flow
+----------------------------------------
+a.	Scenario -1. 
+
+- Deskripsi	: Syarat pengaduan terpenuhi atau proses pengaduan sukses
+- Given    	: I am on e-ticketing home page Manivlab
+- When     	: I press button "add new ticket"
+-Then		: System direct me to page new ticketing
+- When     	: I fill in "Subject"
+		AND  I fill in "Description"
+		AND  I have to fill something "Select Product"    
+-Then		: System give me list what product I have to choose 
+- When     	: I press "save button"
+- Then	   	: System give me a notice that ticket has been success"
+		AND System direct me to e-ticketing home page
+
+
+--------------------------------------
+		Exception
+--------------------------------------
+b. 		Scenario-2. 
+
+- Deskripsi 	: Pengaduan tidak dapat dilakukan karena tidak tidak sesuai prosedur atau syarat pengaduan tidak terpenuhi
+- Given    	: I am on e-ticketing home page Manivlab
+- When     	: I press button "add new ticket"
+-Then		: System direct me to page new ticketing
+- When     	: I’m not fill anything in "Subject"
+		AND  I’m not fill anything in "Description"
+		AND  I have to fill something in "Select Product"    
+-Then		: System give me list what product I have to choose 
+- When     	: I press "save button"
+- Then	   	: System give me a notice that I have to fill empty field to success the process
+		AND System can not process my new ticket

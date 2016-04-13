@@ -1,0 +1,68 @@
+	  			    PENJADWALAN LAB
+===========================================================================================
+
+As 	: Petugas Labkom
+I need	: Fitur Penjadwalan Laboratorium Komputer
+So that	: Saya dapat menginputkan jadwal untuk labkom 1,2,3,4 dan juga saya dapat melihat
+	  jadwal laboratorium komputer saat ini
+
+============================================================================================
+					Scenario 
+============================================================================================
+Scenario-1. Input data penjadwalan sesuai	 	-->(Normal Flow)
+Scenario-2. Data date dan time kembar			-->(Exception Flow)
+Scenario-3. Berhasil mengubah jadwal yang sudah ada 	-->(Normal Flow)
+Scenario-4. Menghapus jadwal yang telah tersimpan 	-->(Normal Flow)
+
+
+1) Input data penjadwalan sesuai
+- Deskripsi: Memasukkan jadwal baru ke dalam menu penjadwalan dengan kondisi 
+	     semua data terisi sesuai
+- Scenario : 1) Input data penjadwalan sesuai
+- Given    : I am on Penjadwalan lab page
+- When     : I fill in "ComboBoxLokasi" with "Labkom 1"
+	AND  I fill in "Date" with "?2016-04-13"
+	AND  I fill in "SpinnerTime1" with "07.00"    
+	AND  I fill in "SpinnerTime2" with "08.40" 
+	AND  I fill in "JenisKegiatanField" with "Kuliah PSI" 
+	AND  I fill in "pjmkField" with "Indra Kharisma Raharjana, S. Kom, M.T." 
+	AND  I press "insert_btn"
+- Then	   : the respone should contain "Jadwal Berhasil Disimpan"
+
+2) Data date dan time kembar
+- Descripsi: Memasukkan jadwal baru ke dalam menu penjadwalan dengan kondisi 
+	     date dan time telah terisi jadwal lain 
+- Scenario : 2) Jam yang dipilih telah terisi jadwal
+- Given    : I am on Penjadwalan lab page
+- When     : I fill in "ComboBoxLokasi" with "Labkom 1"
+	AND  I fill in "Date" with "?2016-04-13"
+	AND  I fill in "SpinnerTime1" with "07.00"    
+	AND  I fill in "SpinnerTime2" with "08.40" 
+	AND  I fill in "JenisKegiatanField" with "Kuliah Audit Sistem Informasi" 
+	AND  I fill in "pjmkField" with "Indra Kharisma Raharjana, S. Kom, M.T." 
+	AND  I press "insert_btn"
+- Then	   : the respone should contain "Jadwal Gagal Disimpan, telah terisi jadwal lain"
+
+3) Berhasil mengubah jadwal yang sudah ada
+- Descripsi: Mengubah jadwal yang sudah ada dengan mengganti date dan time
+- Scenario : 3) Berhasil mengubah jadwal yang sudah ada
+- Given    : I am on Penjadwalan lab page
+- When     : I select "Kuliah PSI" on "TabelJadwal"
+- Then	   : the respone should show pop up Detail Aktivitas
+- When     : I select "Date" change to "?2016-04-14"
+	AND  I select "SpinnerTime1" change to "08.50"    
+	AND  I select "SpinnerTime2" change to "09.40" 
+	AND  I press "update_btn"
+- Then	   : the respone should contain "Jadwal berhasil diperbaharui"
+
+4) Menghapus jadwal yang telah tersimpan
+- Descripsi: Menghapus jadwal yang telah tersimpan di dalam database
+- Scenario : 4) Menghapus jadwal yang telah tersimpan
+- Given    : I am on Penjadwalan lab page
+- When     : I select "Kuliah PSI" on "TabelJadwal"
+- Then	   : the respone should show pop up Detail Aktivitas
+- When     : I press "delete_btn"
+- Then	   : the respone should contain "Jadwal berhasil dihapus"
+
+
+Alternative Flow --> Pada fitur ini tidak ditemukan alternative flow
