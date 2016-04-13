@@ -16,8 +16,7 @@ body {
 	<div id="header"></div>
 <div id="wrapper">
   <div class="left"> </div>
-	  <div class="right">
-		<img src="../image/title4.jpg" alt="" width="238" height="23" class="title" /><br /><div id="content"></div>
+	  <div class="right"><br /><div id="content"></div>
 			<p class="style2">
 			<strong>SELAMAT DATANG, SELAMAT BEKERJA</strong></p>
         <blockquote>
