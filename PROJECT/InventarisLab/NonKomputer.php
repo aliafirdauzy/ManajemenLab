@@ -7,12 +7,12 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 <style type="text/css">
 body {
-	background-color: #06C;
+	background-color: #00CCCC;
 }
 </style>
 </head>
 
-<body bgcolor="#0066CC">
+<body bgcolor="#00CCCC">
 	<div id="header"></div>
 <div id="wrapper">
   <div class="left"> </div>
